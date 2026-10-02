@@ -1,61 +1,54 @@
-# 🅰️ Angular Basics - Conceptos Básicos de Angular  
+# Angular Basics
 
-📚 Repositorio con ejemplos para aprender los fundamentos de Angular  
+Proyecto de práctica para aprender los fundamentos de Angular 19.
+Basado en el repositorio de [MikeMoralesDEV](https://github.com/MikeMoralesDEV/AngularBasics),
+con mis propias modificaciones.
 
-## 📂 Estructura del Proyecto  
+## Tecnologías
 
-- **📁 /src/app/components** - Componentes principales  
-- **📁 /src/app/directives** - Directivas personalizadas  
-- **📁 /src/app/pipes** - Pipes personalizados  
-- **📁 /src/app/services** - Servicios y lógica de negocio  
-- **📄 /src/app/app.module.ts** - Módulo principal  
-- **📄 /src/app/app-routing.module.ts** - Configuración de rutas  
+- Angular 19 (componentes standalone)
+- Angular Material
+- TypeScript
+- ngx-logger
 
-## 🗺️ Configuración de Rutas (Routing)  
+## Cómo ejecutarlo
 
-Angular utiliza un sistema de routing para mostrar componentes dinámicamente:  
+Requisitos: Node.js 18.19+ o 20+ y Git.
 
-1. **Routes**: Se definen en el módulo de routing:  
-`const routes: Routes = [ { path: 'home', component: HomeComponent }, { path: 'about', component: AboutComponent } ];`  
+    git clone https://github.com/marcefn/AngularBasics.git
+    cd AngularBasics
+    npm install
+    npm start
 
-2. **RouterLink**: En las plantillas HTML se usa para navegar:  
-`<a routerLink="/home">Inicio</a>`  
-`<a routerLink="/about">Acerca de</a>`  
+Abre http://localhost:4200
 
-3. **RouterOutlet**: Donde se renderizan los componentes:  
-`<router-outlet></router-outlet>`  
+## Rutas disponibles
 
-## 🚀 Componentes Standalone (Independientes)  
+| Ruta       | Descripción                     |
+| ---------- | ------------------------------- |
+| /Menu      | Menú de navegación              |
+| /Noticias  | Componente de noticias          |
+| /Productos | Tabla de productos con servicio |
+| /Ejemplo   | Componente de ejemplo           |
 
-Los componentes standalone son una característica moderna de Angular que:  
+## Estructura
 
-✔️ **No requieren NgModule**: Se declaran como independientes  
+- `src/app/app.routes.ts`: definición de rutas
+- `src/app/producto.service.ts`: servicio con los datos de productos
+- `src/app/producto.ts` y `categoria.ts`: modelos
 
-💡 **Ventajas**:  
-- Menos código boilerplate  
-- Mejor organización  
-- Más fáciles de reutilizar  
+## Lo que he aprendido
 
-🛠️ **Cómo usarlos**:  
-- Se marcan con `standalone: true`  
-- Importan sus propias dependencias  
+- Cómo funcionan los componentes standalone y su lista de `imports`
+- Routing con `RouterLink` y `RouterOutlet`
+- Separar datos y lógica en servicios
+- (añade aquí lo que vayas aprendiendo)
 
-`@Component({ standalone: true, imports: [CommonModule], template: '...' })`  
+## Cambios que he hecho
 
-## ⚙️ Configuración Básica  
+- Limpiados los imports sin usar
+- (añade aquí tus cambios)
 
-1. Clonar repositorio:  
-`git clone https://github.com/MikeMoralesDEV/AngularBasics.git`  
+## Créditos y licencia
 
-2. Instalar dependencias:  
-`npm install`  
-
-3. Ejecutar aplicación:  
-`ng serve`  
-
-## 📚 Recursos Adicionales  
-🔗 [Documentación Angular](https://angular.io/docs)  
-🔗 [Guía de Routing](https://angular.io/guide/router)  
-
-## 📜 Licencia  
-MIT License  ****
+Proyecto original de MikeMoralesDEV, licencia MIT.
