@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+button {
+  align-self: flex-start;
+}
+
+.exito {
+  margin-top: 16px;
+  color: #2e7d32;
+}

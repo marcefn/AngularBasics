@@ -1,22 +1,8 @@
-mat-nav-list {
+nav {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra el contenedor de los items */
-  padding: 0;
+  gap: 4px;
 }
 
-mat-list-item {
-  display: flex;
-  align-items: center; /* Centra el contenido (icono y texto) verticalmente */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  width: 100%; /* Asegura que ocupe el 100% del ancho disponible */
-  padding: 10px;
-}
-
-mat-icon {
-  margin-right: 10px; /* Espacio entre el icono y el texto */
-}
-
-mat-list-item:hover {
-  background-color: #e0e0e0; /* Fondo al pasar el mouse */
+.activo {
+  background-color: rgba(0, 0, 0, 0.08);
 }

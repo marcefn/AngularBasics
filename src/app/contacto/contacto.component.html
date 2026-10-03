@@ -1,1 +1,47 @@
-<p>contacto works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Contacto</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="formulario" #f="ngForm" (ngSubmit)="enviar(f)">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" />
+        @if (formulario.controls.nombre.hasError("required")) {
+          <mat-error>El nombre es obligatorio</mat-error>
+        } @else if (formulario.controls.nombre.hasError("minlength")) {
+          <mat-error>Mínimo 3 caracteres</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+        @if (formulario.controls.email.hasError("required")) {
+          <mat-error>El email es obligatorio</mat-error>
+        } @else if (formulario.controls.email.hasError("email")) {
+          <mat-error>El formato del email no es válido</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput rows="5" formControlName="mensaje"></textarea>
+        @if (formulario.controls.mensaje.hasError("required")) {
+          <mat-error>El mensaje es obligatorio</mat-error>
+        } @else if (formulario.controls.mensaje.hasError("minlength")) {
+          <mat-error>Mínimo 10 caracteres</mat-error>
+        }
+      </mat-form-field>
+
+      <button mat-flat-button type="submit">Enviar</button>
+    </form>
+
+    @if (enviado) {
+      <p class="exito">
+        ¡Mensaje enviado! (de momento solo se muestra en la consola)
+      </p>
+    }
+  </mat-card-content>
+</mat-card>
